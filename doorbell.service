@@ -3,8 +3,8 @@ Description=Doorbell
 After=network.target
 
 [Service]
-ExecStart=python3 -u doorbell.py
-WorkingDirectory=/home/pi/python/doorbell/api/
+ExecStart=/usr/bin/python3 -u doorbell.py
+WorkingDirectory=/home/pi/python/doorbell/
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
@@ -16,5 +16,5 @@ WantedBy=multi-user.target
 
 #Edit value for WorkingDirectory
 #Copy this file to /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl start doorbell.service
+#sudo systemctl daemon-reload
+#sudo systemctl start doorbell.service
