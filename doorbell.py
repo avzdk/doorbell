@@ -16,8 +16,7 @@ scriptname=os.path.basename(__file__)
 
 		
 pushover=PushOver(conf['Pushover']['Key'], conf['Pushover']['Token'])		
-print ( conf['Pushover']['Token'])		
-		
+
 log = logging.getLogger(__name__)
 logging.basicConfig(
     level=conf["LOG"]["LEVEL"],
@@ -51,9 +50,9 @@ class Doorbell:
 			
 	def tryk(self,tryktid):
 		if time.time()-self.last_pressed > 5:  # kun et tryk pr 5 sekunder
-			logger.info("Ringklokke trykket")
-			rv = pushover.send(" Hello","Smarthome: Det ringer på døren","echo")
-			print(rv)
+			log.info("Ringklokke trykket")
+			rv = pushover.send(conf['Pushover']['MessageBody'],conf['Pushover']['MessageTitle'])
+			log.debug(rv)
 		self.last_pressed=time.time()
 
 
