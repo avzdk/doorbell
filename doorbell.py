@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os
+
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 import time
@@ -11,10 +11,6 @@ from pushover import PushOver
 conf = configparser.ConfigParser()
 conf.read(['doorbell.ini','doorbell_local.ini'])
 
-scriptname=os.path.basename(__file__)
-
-
-		
 pushover=PushOver(conf['Pushover']['Key'], conf['Pushover']['Token'])		
 
 log = logging.getLogger(__name__)
