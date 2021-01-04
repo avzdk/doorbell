@@ -9,7 +9,7 @@ import logging
 from pushover import PushOver
 
 conf = configparser.ConfigParser()
-conf.read('doorbell.ini')
+conf.read(['doorbell.ini','doorbell_local.ini'])
 
 scriptname=os.path.basename(__file__)
 
