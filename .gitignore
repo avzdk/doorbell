@@ -1,2 +1,3 @@
 doorbell_local.ini
 *.pyc
+.vscode/
