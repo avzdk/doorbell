@@ -47,7 +47,7 @@ class Doorbell:
 	def tryk(self,tryktid):
 		if time.time()-self.last_pressed > 5:  # kun et tryk pr 5 sekunder
 			log.info("Ringklokke trykket")
-			rv = pushover.send(conf['Pushover']['MessageBody'],conf['Pushover']['MessageTitle'])
+			rv = pushover.send(conf['Pushover']['MessageBody'],conf['Pushover']['MessageTitle'],conf['Pushover']['MessageSound'])
 			log.debug(rv)
 		self.last_pressed=time.time()
 
